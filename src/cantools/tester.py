@@ -84,6 +84,9 @@ class Listener(can.Listener):
         self._input_queue = input_queue
         self._on_message = on_message
 
+    def _on_error(self, msg):
+        return
+
     def on_message_received(self, msg):
         if msg.is_error_frame or msg.is_remote_frame:
             return
